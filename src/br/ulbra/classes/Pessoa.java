@@ -4,7 +4,7 @@ package br.ulbra.classes;
  * @author Jeferson
  * Assunto: Projeto de uma agenda utilizando ArrayList de Objetos
  */
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa>{
     private String nome;
     private String sobre;
     private String fone;
@@ -49,10 +49,15 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return  "\nNome: "+this.nome+" "+this.sobre+"\n"
-                + "Celular:  "+this.fone+"\n"
-                + "======================";
+        return  this.nome+" "+this.sobre+" - "+this.fone+"\n";
+
     }
+
+    @Override
+    public int compareTo(Pessoa p) {
+        return this.getNome().compareTo(p.getNome());
+    }
+
   
 
     
